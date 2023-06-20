@@ -1,0 +1,27 @@
+[gd_scene load_steps=5 format=3 uid="uid://bijey5u6fmab7"]
+
+[ext_resource type="Texture2D" uid="uid://cof0efkkbt6sq" path="res://textures/start_button/Picsart_23-06-19_16-29-57-274.png" id="1_562a0"]
+[ext_resource type="Texture2D" uid="uid://ca3dbm4u8in6v" path="res://textures/start_button/Picsart_23-06-19_16-54-31-066.png" id="2_tuin4"]
+[ext_resource type="Texture2D" uid="uid://g2takpl027ww" path="res://textures/start_button/Picsart_23-06-19_17-16-34-678.png" id="3_872xf"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_2upki"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_562a0")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_tuin4")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_872xf")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="Node2D" type="AnimatedSprite2D"]
+scale = Vector2(0.5, 0.5)
+sprite_frames = SubResource("SpriteFrames_2upki")
+autoplay = "default"

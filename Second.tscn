@@ -1,0 +1,39 @@
+[gd_scene load_steps=2 format=3 uid="uid://dbqm78nw3o1ds"]
+
+[ext_resource type="Script" path="res://scripts/Second.cs" id="1_5fd83"]
+
+[node name="Second" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_5fd83")
+
+[node name="TabContainer" type="TabContainer" parent="."]
+layout_mode = 0
+offset_right = 1152.0
+offset_bottom = 648.0
+
+[node name="TabBar" type="TabBar" parent="TabContainer"]
+layout_mode = 2
+
+[node name="TextEdit" type="TextEdit" parent="TabContainer/TabBar"]
+layout_mode = 0
+offset_left = 768.0
+offset_top = 89.0
+offset_right = 1040.0
+offset_bottom = 161.0
+placeholder_text = "Hello text holder"
+
+[node name="TabBar2" type="TabBar" parent="TabContainer"]
+layout_mode = 2
+
+[node name="TextEdit" type="TextEdit" parent="TabContainer/TabBar2"]
+layout_mode = 0
+offset_left = 64.0
+offset_top = 128.0
+offset_right = 336.0
+offset_bottom = 200.0
+placeholder_text = "Hello text holder"

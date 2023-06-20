@@ -1,0 +1,86 @@
+[gd_scene load_steps=9 format=3 uid="uid://btk70u35itw45"]
+
+[ext_resource type="Script" path="res://Main.cs" id="1_bktsc"]
+[ext_resource type="Texture2D" uid="uid://dj2m33teva52f" path="res://textures/back/parallax-00.png" id="2_hocor"]
+[ext_resource type="Script" path="res://scripts/Clouds.gd" id="3_pxm7n"]
+[ext_resource type="Texture2D" uid="uid://boqctpjj7417c" path="res://textures/back/parallax-01.png" id="4_arcwp"]
+[ext_resource type="Texture2D" uid="uid://g3odumdr8ke6" path="res://textures/back/parallax-02.png" id="5_oh6u4"]
+[ext_resource type="Texture2D" uid="uid://cpd0tmwwns3ax" path="res://textures/back/parallax-03.png" id="6_gajm0"]
+[ext_resource type="Texture2D" uid="uid://cof0efkkbt6sq" path="res://textures/start_button/Picsart_23-06-19_16-29-57-274.png" id="7_o24er"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_pll5v"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("7_o24er")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="Main" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_bktsc")
+
+[node name="ParallaxBackground" type="ParallaxBackground" parent="."]
+
+[node name="ParallaxLayer" type="ParallaxLayer" parent="ParallaxBackground"]
+
+[node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer"]
+position = Vector2(576, 324)
+scale = Vector2(0.8, 1.8)
+texture = ExtResource("2_hocor")
+
+[node name="ParallaxLayer2" type="ParallaxLayer" parent="ParallaxBackground"]
+motion_mirroring = Vector2(1152, 0)
+script = ExtResource("3_pxm7n")
+
+[node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer2"]
+position = Vector2(576, 324)
+scale = Vector2(0.8, 1.8)
+texture = ExtResource("4_arcwp")
+
+[node name="ParallaxLayer3" type="ParallaxLayer" parent="ParallaxBackground"]
+
+[node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer3"]
+position = Vector2(576, 324)
+scale = Vector2(0.8, 1.8)
+texture = ExtResource("5_oh6u4")
+
+[node name="ParallaxLayer4" type="ParallaxLayer" parent="ParallaxBackground"]
+
+[node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer4"]
+position = Vector2(576, 324)
+scale = Vector2(0.8, 1.8)
+texture = ExtResource("6_gajm0")
+
+[node name="Start" type="Button" parent="."]
+modulate = Color(1, 1, 1, 0)
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.059
+anchor_top = 0.105
+anchor_right = 0.059
+anchor_bottom = 0.105
+offset_left = 304.032
+offset_top = -12.04
+offset_right = 696.032
+offset_bottom = 163.96
+pivot_offset = Vector2(68, 68)
+
+[node name="StartTexture" type="AnimatedSprite2D" parent="."]
+position = Vector2(568, 144)
+scale = Vector2(0.608222, 0.608222)
+sprite_frames = SubResource("SpriteFrames_pll5v")
+autoplay = "default"
+frame_progress = 0.967724
+
+[connection signal="mouse_entered" from="Start" to="." method="_on_button_mouse_entered"]
+[connection signal="mouse_exited" from="Start" to="." method="_on_start_mouse_exited"]
+[connection signal="pressed" from="Start" to="." method="_on_button_pressed"]
